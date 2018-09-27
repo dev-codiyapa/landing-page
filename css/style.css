@@ -1,0 +1,115 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+
+/* Now we will set font property for entire webpage 
+  in body element, because font properties will get inherited by 
+  all the child elements of body (everything related font we specified in the body ) */
+
+body{
+	font-family:"Lato", sans-serif;
+	font-weight:400;
+	font-size: 16px;
+	line-height: 1.7;
+	color: #777;
+	padding:30px;
+}
+
+.header{
+	height: 95vh; /* 95vh means header height will be 95% of available viwe-port */
+	background-image:linear-gradient(to right bottom,rgba(126,213,111,0.8) ,rgba(40,180,131,0.8)),url(../img/hero.jpg);
+	background-size: cover;
+	background-position: top; /* when we try to  fit the header image in different frame  
+								top position wll be always visible */
+
+	clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
+	position: relative;
+}
+
+.logo-box{
+	position: absolute;
+	top: 40px;
+	left: 40px;
+}
+
+.logo{
+	height: 35px; /* height will be adjust or fix accordingly */
+}
+
+.text-box{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.heading-primary{
+	color: #fff;
+	text-transform: uppercase;
+
+	backface-visibility:  hidden; /* to fix the sacking in animation */
+}
+
+.heading-primary-main{
+	display: block;
+	font-size: 60px;
+	font-weight: 400;
+	letter-spacing: 35px;
+
+	/*animation-name: moveInLeft;
+	animation-duration:1s;
+	animation-timing-function: ease-out; (we can combind these properties ) */ /* fast at the begining and slow at the end */
+
+	/*animation-delay: 3s;
+	animation-iteration-count: 3;*/
+
+	animation: moveInLeft 1s ease-out;
+}
+
+.heading-primary-sub{
+	display: block;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 17.4px;
+
+	/*animation-name: moveInRight;
+	animation-duration: 1s;
+	animation-timing-function: ease-out; (we can combind these properties ) */
+
+	animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft{
+
+	0%{
+		opacity:0;
+		transform: translateX(-100px);
+	}
+
+	80%{
+		transform: translateX(10px);
+	}
+
+	10%%{
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes moveInRight{
+
+	0%{
+		opacity:0;
+		transform: translateX(100px);
+	}
+
+	80%{
+		transform: translateX(-10px);
+	}
+
+	10%%{
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
