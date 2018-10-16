@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before{
+	padding:0;
+	margin:0;
+	box-sizing:inherit;
+}
+
+html{
+	font-size: 62.5%; //This defines what 1rem is
+}
+
+/* Now we will set font property for entire webpage 
+  in body element, because font properties will get inherited by 
+  all the child elements of body (everything related font we specified in the body ) */
+
+body{
+	box-sizing: border-box;
+}

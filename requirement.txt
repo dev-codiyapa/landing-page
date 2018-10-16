@@ -1,0 +1,7 @@
+#==========to compile sass files:=============#
+npm run compile:sass
+
+
+#==========to autou refresh webpage==========#
+live-server
+
